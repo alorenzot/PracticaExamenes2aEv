@@ -6,9 +6,11 @@ import java.util.stream.Collectors;
 
 public class Company implements IManageEmployee {
     private List<Employee> employees;
-    public Company(){
-        employees=new ArrayList<>();
+
+    public Company() {
+        employees = new ArrayList<>();
     }
+
     @Override
     public void addEmployee(Employee employee) {
         employees.add(employee);
@@ -29,15 +31,15 @@ public class Company implements IManageEmployee {
         this.employees.addAll(employees);
     }
 
-    public List<Employee> alphabeticalEmployeeSort(){
+    public List<Employee> alphabeticalEmployeeSort() {
         return employees.stream()
                 .sorted()
                 .collect(Collectors.toList());
     }
 
-    public List<Employee> noProjectEmployees(){
+    public List<Employee> noProjectEmployees() {
         return employees.stream()
-                .filter((e1)-> e1.projects.isEmpty() && e1.isActive())
+                .filter((e1) -> e1.projects.isEmpty() && e1.isActive())
                 .collect(Collectors.toList());
     }
 

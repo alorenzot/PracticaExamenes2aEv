@@ -7,7 +7,7 @@ public class Gato implements Serializable {
     private String nombre;
     private int edad;
 
-    public Gato(String nombre, int edad) throws Exception{
+    public Gato(String nombre, int edad) throws Exception {
         setNombre(nombre);
         setEdad(edad);
 
@@ -15,13 +15,14 @@ public class Gato implements Serializable {
         this.edad = edad;
     }
 
-    public static void save(List<Gato> gatoList, String fichero){
-        try(ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fichero))) {
+    public static void save(List<Gato> gatoList, String fichero) {
+        try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(fichero))) {
             oos.writeObject(fichero);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
+
     public static List<Gato> load(String fichero) {
         List<Gato> aux;
         try (ObjectInputStream ois = new ObjectInputStream(new FileInputStream(fichero))) {
@@ -36,8 +37,8 @@ public class Gato implements Serializable {
         return nombre;
     }
 
-    public void setNombre(String nombre) throws Exception{
-        if (nombre.length()<3) throw new Exception("El nombre debe tener al menos 3 caracteres.");
+    public void setNombre(String nombre) throws Exception {
+        if (nombre.length() < 3) throw new Exception("El nombre debe tener al menos 3 caracteres.");
 
         this.nombre = nombre;
     }
@@ -46,8 +47,8 @@ public class Gato implements Serializable {
         return edad;
     }
 
-    public void setEdad(int edad) throws Exception{
-        if (edad<0) throw new Exception("La edad no puede ser negativa.");
+    public void setEdad(int edad) throws Exception {
+        if (edad < 0) throw new Exception("La edad no puede ser negativa.");
         this.edad = edad;
     }
 
@@ -56,6 +57,6 @@ public class Gato implements Serializable {
         return "Gato{" +
                 "nombre='" + nombre + '\'' +
                 ", edad=" + edad +
-                '}'+"\n";
+                '}' + "\n";
     }
 }

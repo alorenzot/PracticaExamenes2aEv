@@ -4,7 +4,10 @@ import java.util.Set;
 
 public interface IPetRepository {
     void add(Pet pet);
+
     Pet get(int index);
+
     Pet remove(int index);
+
     Set<Pet> getAll();
 }

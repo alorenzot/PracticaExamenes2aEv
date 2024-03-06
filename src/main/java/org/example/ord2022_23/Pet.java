@@ -10,31 +10,31 @@ public abstract class Pet {
     private boolean alive;
     private Set<Color> colors;
 
-    public Pet(String name, String owner, int age, Set<Color> colors){
-        this.name=name;
-        this.owner=owner;
-        this.age=age;
+    public Pet(String name, String owner, int age, Set<Color> colors) {
+        this.name = name;
+        this.owner = owner;
+        this.age = age;
         this.colors = new HashSet<>();
         this.colors.addAll(colors);
-        alive=true;
+        alive = true;
     }
 
     public abstract void speak();
 
-    public void anniversary(){
+    public void anniversary() {
         age++;
     }
 
-    public void die(){
-        alive=false;
+    public void die() {
+        alive = false;
     }
 
     @Override
-    public boolean equals(Object obj){
-        if (obj==null) return false;
+    public boolean equals(Object obj) {
+        if (obj == null) return false;
         if (!(obj instanceof Pet)) return false;
         Pet p = (Pet) obj;
-        return name.equals(p.name) && owner.equals(p.owner) && age==p.age;
+        return name.equals(p.name) && owner.equals(p.owner) && age == p.age;
     }
 
     public String getName() {

@@ -2,12 +2,12 @@ package org.example.ord2022_23;
 
 import java.util.Set;
 
-public class Cat extends Pet{
+public class Cat extends Pet {
     private boolean longhair;
 
     public Cat(String name, String owner, int age, Set<Color> colors, boolean longhair) {
         super(name, owner, age, colors);
-        this.longhair=longhair;
+        this.longhair = longhair;
     }
 
 

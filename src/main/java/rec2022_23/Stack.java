@@ -4,9 +4,8 @@ package rec2022_23;
  * Solution of exercise 3
  *
  * @author joaalsai
- *
  */
-public class Stack<E>{
+public class Stack<E> {
 
     /**
      *
@@ -20,8 +19,7 @@ public class Stack<E>{
     /**
      * Place the element on top of the stack
      *
-     * @param q
-     *            the element to push
+     * @param q the element to push
      */
     public void push(E q) {
         Nodo<E> nodo = new Nodo<E>(q);
@@ -64,16 +62,16 @@ public class Stack<E>{
     }
 
     /**
+     * @param <E> Element to store in the stack
      * @author joaalsai
-     * @param <E>	Element to store in the stack
      */
-    public class Nodo<E>{
+    public class Nodo<E> {
 
         private E element;
         private Nodo<E> next;
         private Nodo<E> previous;
 
-        public Nodo(E elemento){
+        public Nodo(E elemento) {
             this.element = elemento;
         }
 
@@ -108,7 +106,7 @@ public class Stack<E>{
 
         @Override
         public String toString() {
-            return element.toString() ;
+            return element.toString();
         }
 
     }

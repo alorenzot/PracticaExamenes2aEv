@@ -2,23 +2,25 @@ package org.example.ord2022_23;
 
 import java.util.Set;
 
-public class Canary extends Bird{
+public class Canary extends Bird {
 
     private boolean singing;
 
     public Canary(String name, String owner, int age, Set<Color> colors, boolean fly, boolean singing) {
         super(name, owner, age, colors, fly);
-        this.singing=singing;
+        this.singing = singing;
     }
 
 
-    public void greets(){
+    public void greets() {
         System.out.println("Hello, how are you?");
     }
+
     @Override
     public void speak() {
         System.out.println("PIO PIO");
     }
+
     @Override
     public void fly() {
         this.setFly(true);
